@@ -1,0 +1,31 @@
+body {
+  background: url("https://www.washingtonpost.com/graphics/2018/entertainment/music/orchestra-gender-pay-gap/img/bso.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* NAVBAR */
+
+.nav-bar {
+    background-color: rgb(25, 33, 41);
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  
+  .nav-bar a{
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+  }
+  
+  .nav-bar-ul {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .nav-bar-ul li {
+    list-style-type: none;
+    text-align: center;
+  }
