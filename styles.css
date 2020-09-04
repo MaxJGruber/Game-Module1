@@ -1,5 +1,10 @@
+* {
+  font-family: Avenir;
+}
 body {
-  background: url("https://www.washingtonpost.com/graphics/2018/entertainment/music/orchestra-gender-pay-gap/img/bso.jpg");
+  /* background: url("https://www.washingtonpost.com/graphics/2018/entertainment/music/orchestra-gender-pay-gap/img/bso.jpg"); */
+  background: url("https://chalfontguitarlessons.com/wp-content/uploads/2019/11/lakewood-looking-down-neck-vertical-copy-e1573482651671.jpg");
+  /* background: url('https://cdn.hipwallpaper.com/i/59/23/HfZTGI.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -7,25 +12,131 @@ body {
 /* NAVBAR */
 
 .nav-bar {
-    background-color: rgb(25, 33, 41);
-    padding-top: 14px;
-    padding-bottom: 14px;
+  background-color: rgb(25, 33, 41);
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.nav-bar-ul {
+  /* width: 1200px; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-bar-ul li {
+  list-style-type: none;
+  text-align: center;
+}
+
+/* GAME RULES */
+
+.instructions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1.instructions-title {
+  font-size: 65px;
+}
+
+.instruction-item {
+  font-size: 2em;
+}
+
+#win-points {
+  color: green;
+}
+
+#lose-points {
+  color: red;
+}
+/* NOTES */
+
+.note {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  animation: first-cord 7s linear alternate;
+  margin: 2%;
+}
+
+.first-note {
+  border: 2px solid #59a27a;
+  background-color: green;
+}
+.second-note {
+  border: 2px solid #fa5732;
+  background-color: orange;
+}
+.third-note {
+  border: 2px solid #d11d05;
+  background-color: red;
+}
+.fourth-note {
+  border: 2px solid #0d355a;
+  background-color: blue;
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* DATA */
+
+.data-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* SCORE */
+
+.score {
+  display: inline-block;
+  background-color: cornflowerblue;
+  padding: 5%;
+  border-radius: 15%;
+}
+
+/* LEADERBOARD */
+
+.leaderboard {
+  display: inline-block;
+  background-color: cornflowerblue;
+  padding: 5%;
+  border-radius: 15%;
+}
+
+/* ANIMATIONS */
+
+/* @keyframes first-cord {
+  100% {
+    transform: translateY(calc(45vw - 50px));
   }
-  
-  .nav-bar a{
-    color: white;
-    text-decoration: none;
-    font-size: 2em;
+} */
+
+/* @keyframes second-cord {
+  100% {
+    transform: translateY(calc(45vw - 50px));
   }
-  
-  .nav-bar-ul {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
+}
+
+@keyframes third-cord {
+  100% {
+    transform: translateY(calc(45vw - 50px));
   }
-  
-  .nav-bar-ul li {
-    list-style-type: none;
-    text-align: center;
+}
+
+@keyframes fourth-cord {
+  100% {
+    transform: translateY(calc(45vw - 50px));
   }
+} */
