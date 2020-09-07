@@ -9,6 +9,21 @@ body {
   background-size: cover;
 }
 
+.player-screen {
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+}
+
+.gameview {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.violin-string {
+  display: flex;
+  justify-content: center;
+}
+
 /* NAVBAR */
 
 .nav-bar {
@@ -65,7 +80,6 @@ h1.instructions-title {
   width: 25px;
   border-radius: 50%;
   animation: first-cord 7s linear alternate;
-  margin: 2%;
 }
 
 .first-note {
@@ -86,11 +100,25 @@ h1.instructions-title {
 }
 
 .notes {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
 }
 
+.first-cord {
+  animation: first-cord 1s linear alternate;
+}
+.second-cord {
+  animation: second-cord 3s linear alternate;
+}
+.third-cord {
+  animation: third-cord 2s linear alternate;
+}
+.fourth-cord {
+  animation: fourth-cord 4s linear alternate;
+}
 /* DATA */
 
 .data-container {
@@ -117,13 +145,13 @@ h1.instructions-title {
 
 /* ANIMATIONS */
 
-/* @keyframes first-cord {
+@keyframes first-cord {
   100% {
     transform: translateY(calc(45vw - 50px));
   }
-} */
+}
 
-/* @keyframes second-cord {
+@keyframes second-cord {
   100% {
     transform: translateY(calc(45vw - 50px));
   }
@@ -139,4 +167,4 @@ h1.instructions-title {
   100% {
     transform: translateY(calc(45vw - 50px));
   }
-} */
+}
