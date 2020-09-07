@@ -22,6 +22,21 @@ body {
 .violin-string {
   display: flex;
   justify-content: center;
+  vertical-align: auto;
+}
+
+.action-bar {
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  grid-row: auto;
+  height: 40px;
+  margin-top: 20vh;
+}
+
+.fret-board {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  background: #ABACAB;
 }
 
 /* NAVBAR */
@@ -108,16 +123,16 @@ h1.instructions-title {
 }
 
 .first-cord {
-  animation: first-cord 1s linear alternate;
+  animation: first-cord 1s linear;
 }
 .second-cord {
-  animation: second-cord 3s linear alternate;
+  animation: second-cord 1s linear;
 }
 .third-cord {
-  animation: third-cord 2s linear alternate;
+  animation: third-cord 1s linear;
 }
 .fourth-cord {
-  animation: fourth-cord 4s linear alternate;
+  animation: fourth-cord 1s linear;
 }
 /* DATA */
 
@@ -132,6 +147,7 @@ h1.instructions-title {
   background-color: cornflowerblue;
   padding: 5%;
   border-radius: 15%;
+  margin: 10%;
 }
 
 /* LEADERBOARD */
@@ -141,6 +157,37 @@ h1.instructions-title {
   background-color: cornflowerblue;
   padding: 5%;
   border-radius: 15%;
+  margin: 10%;
+}
+
+/* INTERACTION ZONE */
+.tap-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tap-button {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.first-btn {
+  border: 2px solid #59a27a;
+  background-color: grey;
+}
+.second-btn {
+  border: 2px solid #fa5732;
+  background-color: grey;
+}
+.third-btn {
+  border: 2px solid #d11d05;
+  background-color: grey;
+}
+.fourth-btn {
+  border: 2px solid #0d355a;
+  background-color: grey;
 }
 
 /* ANIMATIONS */
