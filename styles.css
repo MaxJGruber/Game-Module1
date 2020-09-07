@@ -98,7 +98,6 @@ h1.instructions-title {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  animation: first-cord 7s linear alternate;
 }
 
 .first-note {
@@ -123,32 +122,18 @@ h1.instructions-title {
 .first-cord {
   animation: first-cord 1s linear;
 }
-
-.animationEnd {
-  visibility: hidden;
-  display: none;
-}
 .second-cord {
   animation: second-cord 1s linear;
 }
-.animationEnd {
-  visibility: hidden;
-  display: none;
-}
+
 .third-cord {
   animation: third-cord 1s linear;
 }
-.animationEnd {
-  visibility: hidden;
-  display: none;
-}
+
 .fourth-cord {
   animation: fourth-cord 1s linear;
 }
-.animationEnd {
-  visibility: hidden;
-  display: none;
-}
+
 /* DATA */
 
 /* SCORE */

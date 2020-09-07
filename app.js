@@ -1,21 +1,27 @@
-const arrayOfNotes = ["first-note", "second-note", "third-note", "fourth-note"];
-const arrayOfCords = ["first-cord", "second-cord", "third-cord", "fourth-cord"];
+const arrayOfNotes = [
+  ["first-note", "first-cord", "one"],
+  ["second-note", "second-cord", "two"],
+  ["third-note", "third-cord", "three"],
+  ["fourth-note", "fourth-cord", "four"],
+];
+// const arrayOfCords = ["first-cord", "second-cord", "third-cord", "fourth-cord"];
 const arrayOfStrings = ["one", "two", "three", "four"];
 
 function randomNote() {
   let note = document.createElement("div");
   note.classList.add("note");
+  const classesToAdd =
+    arrayOfNotes[Math.floor(Math.random() * arrayOfNotes.length)];
+  console.log(classesToAdd);
+
   note.classList.add(
-    `${arrayOfNotes[Math.floor(Math.random() * arrayOfNotes.length)]}`
+    `${classesToAdd[0]}`,
+    `${classesToAdd[1]}`,
+    `${classesToAdd[2]}`
   );
-  note.classList.add(
-    `${arrayOfCords[Math.floor(Math.random() * arrayOfCords.length)]}`
-  );
-  const chosenParent = document.querySelectorAll(".violin-string")[
-    Math.floor(
-      Math.random() * document.querySelectorAll(".violin-string").length
-    )
-  ];
+
+  const chosenParent = document.getElementById(`${classesToAdd[2]}`);
+  console.log(">>>>>>>", chosenParent);
   chosenParent.appendChild(note);
   removeElement();
 }
