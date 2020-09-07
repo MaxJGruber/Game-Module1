@@ -1,6 +1,9 @@
 * {
   font-family: Avenir;
 }
+
+/* SCREEN PARTS */
+
 body {
   /* background: url("https://www.washingtonpost.com/graphics/2018/entertainment/music/orchestra-gender-pay-gap/img/bso.jpg"); */
   background: url("https://chalfontguitarlessons.com/wp-content/uploads/2019/11/lakewood-looking-down-neck-vertical-copy-e1573482651671.jpg");
@@ -17,6 +20,7 @@ body {
 .gameview {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  justify-items: center;
 }
 
 .violin-string {
@@ -36,7 +40,8 @@ body {
 .fret-board {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  background: #ABACAB;
+  background: #abacab;
+  border-radius: 25%;
 }
 
 /* NAVBAR */
@@ -54,7 +59,6 @@ body {
 }
 
 .nav-bar-ul {
-  /* width: 1200px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -114,32 +118,39 @@ h1.instructions-title {
   background-color: blue;
 }
 
-.notes {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; */
-}
+/* VERTICAL DROP */
 
 .first-cord {
   animation: first-cord 1s linear;
 }
+
+.animationEnd {
+  visibility: hidden;
+  display: none;
+}
 .second-cord {
   animation: second-cord 1s linear;
+}
+.animationEnd {
+  visibility: hidden;
+  display: none;
 }
 .third-cord {
   animation: third-cord 1s linear;
 }
+.animationEnd {
+  visibility: hidden;
+  display: none;
+}
 .fourth-cord {
   animation: fourth-cord 1s linear;
 }
+.animationEnd {
+  visibility: hidden;
+  display: none;
+}
 /* DATA */
 
-.data-container {
-  display: flex;
-  justify-content: space-between;
-}
 /* SCORE */
 
 .score {
@@ -171,6 +182,7 @@ h1.instructions-title {
   height: 25px;
   width: 25px;
   border-radius: 50%;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .first-btn {
@@ -193,24 +205,40 @@ h1.instructions-title {
 /* ANIMATIONS */
 
 @keyframes first-cord {
+  0% {
+    display: none;
+    visibility: hidden;
+  }
   100% {
     transform: translateY(calc(45vw - 50px));
   }
 }
 
 @keyframes second-cord {
+  0% {
+    display: none;
+    visibility: hidden;
+  }
   100% {
     transform: translateY(calc(45vw - 50px));
   }
 }
 
 @keyframes third-cord {
+  0% {
+    display: none;
+    visibility: hidden;
+  }
   100% {
     transform: translateY(calc(45vw - 50px));
   }
 }
 
 @keyframes fourth-cord {
+  0% {
+    display: none;
+    visibility: hidden;
+  }
   100% {
     transform: translateY(calc(45vw - 50px));
   }
