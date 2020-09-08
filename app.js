@@ -71,8 +71,8 @@ function checkingCoordinates() {
   if (secondStringNote) {
     let secondStringRect = secondStringNote.getBoundingClientRect();
     if (
-      secondStringRect.x < rect2.x + 10 &&
-      secondStringRect.x > rect2.x - 10
+      secondStringRect.x < rect2.x + 20 &&
+      secondStringRect.x > rect2.x - 20
     ) {
       score += 10;
       console.log(secondStringRect);
@@ -81,7 +81,7 @@ function checkingCoordinates() {
   let thirdStringNote = document.querySelector(".third-note");
   if (thirdStringNote) {
     let thirdStringRect = thirdStringNote.getBoundingClientRect();
-    if (thirdStringRect.x < rect3.x + 10 && thirdStringRect.x > rect3.x - 10) {
+    if (thirdStringRect.x < rect3.x + 20 && thirdStringRect.x > rect3.x - 20) {
       score += 10;
       console.log(thirdStringRect);
     }
@@ -90,8 +90,8 @@ function checkingCoordinates() {
   if (fourthStringNote) {
     let fourthStringRect = fourthStringNote.getBoundingClientRect();
     if (
-      fourthStringRect.x < rect4.x + 10 &&
-      fourthStringRect.x > rect4.x - 10
+      fourthStringRect.x < rect4.x + 20 &&
+      fourthStringRect.x > rect4.x - 20
     ) {
       score += 10;
       console.log(fourthStringRect);
@@ -105,19 +105,23 @@ function checkingCoordinates() {
 
 // INTERACTIONS / EVENT LISTENERS
 
-document
-  .querySelector(".first-btn")
-  .addEventListener("click", checkingCoordinates);
-document
-  .querySelector(".second-btn")
-  .addEventListener("click", checkingCoordinates);
-document
-  .querySelector(".third-btn")
-  .addEventListener("click", checkingCoordinates);
-document
-  .querySelector(".fourth-btn")
-  .addEventListener("click", checkingCoordinates);
-// startSong();
+document.addEventListener(
+  "keydown",
+  (event) => {
+    switch (event.key) {
+      case "a":
+        return;
+      case "s":
+        return;
+      case "d":
+        return;
+      case "f":
+        return;
+    }
+  },
+  checkingCoordinates
+);
+startSong();
 
 // MUSIC SELECTION
 
