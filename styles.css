@@ -136,7 +136,18 @@ h1.instructions-title {
   animation: fourth-cord 1s linear;
 }
 
-/* DATA */
+/* STREAK*/
+
+/* .streak {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
+  padding: 5%;
+  border-radius: 15%;
+  margin: 10%;
+  vertical-align: auto;
+} */
 
 /* SCORE */
 

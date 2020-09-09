@@ -2,16 +2,12 @@
 
 let elem1 = document.querySelector(".first-btn");
 let rect1 = elem1.getBoundingClientRect();
-console.log(rect1);
 let elem2 = document.querySelector(".second-btn");
 let rect2 = elem2.getBoundingClientRect();
-console.log(rect2);
 let elem3 = document.querySelector(".third-btn");
 let rect3 = elem3.getBoundingClientRect();
-console.log(rect3);
 let elem4 = document.querySelector(".fourth-btn");
 let rect4 = elem4.getBoundingClientRect();
-console.log(rect4);
 
 // MUSIC SELECTION
 
@@ -31,14 +27,16 @@ const playlist = [
 
 // START BUTTON
 //Main focus of today
-
+let song = playlist[Math.floor(Math.random() * playlist.length)];
+let applause = new Audio("./songs/applause.mp3");
 function startSong() {
-  let play = playlist[Math.floor(Math.random() * playlist.length)].play();
-  console.log(play);
+  song.play();
+  console.log(song);
   setInterval(() => {
-    if (id === 10) {
+    if (id === 5) {
       clearInterval(id);
-      play.pause();
+      song.pause();
+      applause.play();
     } else {
       randomNote();
     }
