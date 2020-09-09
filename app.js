@@ -1,4 +1,5 @@
-// CREATING RANDOM NOTE
+// CREATING RANDOM NOTE (this random note is then assigned to its specific string)
+// STRING ORDER : GREEN / ORANGE / RED / BLUE
 
 const arrayOfNotes = [
   ["first-note", "first-cord", "one"],
@@ -21,14 +22,18 @@ function randomNote() {
 
   const chosenParent = document.getElementById(`${classesToAdd[2]}`);
   chosenParent.appendChild(note);
-  removeElement();
+  removeElement(); //if statement to determine whether note exists?
 }
+
+// START BUTTON
+//Main focus of today
 
 function startSong() {
   setInterval(randomNote, 1000);
 }
 
-// ANIMATION END
+// ANIMATION END (so that notes disappear and don't go back to position 0)
+
 function removeElement() {
   const animated = document.querySelectorAll(".note");
   animated.forEach((element) =>
@@ -38,7 +43,7 @@ function removeElement() {
   );
 }
 
-// FINDING ELEMENTS
+// FRET-BOARD ELEMENTS COORDINATES
 
 let elem1 = document.querySelector(".first-btn");
 let rect1 = elem1.getBoundingClientRect();
@@ -57,7 +62,29 @@ console.log(rect4);
 
 let score = 0;
 
-// CLICKHANDLER
+// CLICKHANDLER (Interaction of button click; outcome determined by timing (checking coordinates of
+// note element compared to fret-board element coordinates)
+
+// function checkingCoordinates(targetClass, targetRect) {
+//   let stringNote = document.querySelector(targetClass);
+//   if (stringNote) {
+//     let stringRect = stringNote.getBoundingClientRect();
+//     if (stringRect.x < targetRect.x + 20 && stringRect.x > targetRect.x - 20) {
+//       score += 10;
+//     }
+//   }
+// }
+
+// function hitButton() {
+//   checkingCoordinates(".first-note", rect1);
+//   checkingCoordinates(".second-note", rect2);
+//   checkingCoordinates(".third-note", rect3);
+//   checkingCoordinates(".fourth-note", rect4);
+
+//   // SCORE
+//   let scoreview = document.getElementById("score-view");
+//   scoreview.innerHTML = `${score}`;
+// }
 
 function checkingCoordinates() {
   let firstStringNote = document.querySelector(".first-note");
@@ -105,24 +132,29 @@ function checkingCoordinates() {
 
 // INTERACTIONS / EVENT LISTENERS
 
-document.addEventListener(
-  "keydown",
-  (event) => {
-    switch (event.key) {
-      case "a":
-        return;
-      case "s":
-        return;
-      case "d":
-        return;
-      case "f":
-        return;
-    }
-  },
-  checkingCoordinates
-);
-startSong();
+// document.addEventListener("keydown", (event) => {
+//   switch (event.key) {
+//     case "a":
+//       hitButton();
+//       break;
+//     case "s":
+//       hitButton();
+//       break;
+//     case "d":
+//       hitButton();
+//       break;
+//     case "f":
+//       hitButton();
+//       break;
+//   }
+// });
 
+elem1.onclick = checkingCoordinates;
+elem2.onclick = checkingCoordinates;
+elem3.onclick = checkingCoordinates;
+elem4.onclick = checkingCoordinates;
+
+// startSong();
 // MUSIC SELECTION
 
 const firstAudioTrack = new Audio("./songs/bensound-goinghigher.mp3");
@@ -130,3 +162,11 @@ const secondAudioTrack = new Audio("./songs/bensound-happyrock.mp3");
 const thirdAudioTrack = new Audio("./songs/bensound-highoctane.mp3");
 const fourthAudioTrack = new Audio("./songs/bensound-punky.mp3");
 const fifthAudioTrack = new Audio("./songs/bensound-rumble.mp3");
+
+const playlist = [
+  firstAudioTrack,
+  secondAudioTrack,
+  thirdAudioTrack,
+  fourthAudioTrack,
+  fifthAudioTrack,
+];
