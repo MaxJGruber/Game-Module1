@@ -42,7 +42,7 @@ body {
 .fret-board {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  background: #abacab;
+  background: #abacab85;
   border-radius: 25%;
 }
 
@@ -174,19 +174,27 @@ h1.instructions-title {
 
 .first-btn {
   border: 2px solid #59a27a;
-  background-color: grey;
+  background-color: #80808085;
+  position: relative;
+  z-index: 1;
 }
 .second-btn {
   border: 2px solid #fa5732;
-  background-color: grey;
+  background-color: #80808085;
+  position: relative;
+  z-index: 1;
 }
 .third-btn {
   border: 2px solid #d11d05;
-  background-color: grey;
+  background-color: #80808085;
+  position: relative;
+  z-index: 1;
 }
 .fourth-btn {
   border: 2px solid #0d355a;
-  background-color: grey;
+  background-color: #80808085;
+  position: relative;
+  z-index: 1;
 }
 
 /* ANIMATIONS */

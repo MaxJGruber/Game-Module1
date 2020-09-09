@@ -2,9 +2,6 @@
 
 let elem1 = document.querySelector(".first-btn");
 let rect1 = elem1.getBoundingClientRect();
-// let note = document.querySelector(".first-note");
-// let noteRect = note.getBoundingClientRect();
-// console.log(noteRect);
 console.log(rect1);
 let elem2 = document.querySelector(".second-btn");
 let rect2 = elem2.getBoundingClientRect();
@@ -84,17 +81,24 @@ function checkingCoordinates(targetClass, targetRect) {
       console.log("NOTE Y", stringRect.y);
       console.log("BUTTON Y", targetRect.y);
       console.log("BUTTON Y+20", targetRect.y + 20);
-      console.log("RESULT", targetClass.y, targetRect.y);
-      console.log("RESULT", targetClass.x, targetRect.x);
+      console.log("RESULT", stringRect.y, targetRect.y);
+      console.log("RESULT", stringRect.x, targetRect.x);
     }
   }
 }
 
-function hitButton() {
-  checkingCoordinates(".first-note", rect1);
-  checkingCoordinates(".second-note", rect2);
-  checkingCoordinates(".third-note", rect3);
-  checkingCoordinates(".fourth-note", rect4);
+function hitButton(evtClass) {
+  const currentCssClass = evtClass;
+  const possibleActions = {
+    "first-btn": [rect1, ".first-note"],
+    "second-btn": [rect2, ".second-note"],
+    "third-btn": [rect3, ".third-note"],
+    "fourth-btn": [rect4, ".fourth-note"],
+  };
+  checkingCoordinates(
+    possibleActions[currentCssClass][1],
+    possibleActions[currentCssClass][0]
+  );
 
   // SCORE
   let scoreview = document.getElementById("score-view");
@@ -103,27 +107,31 @@ function hitButton() {
 
 // INTERACTIONS / EVENT LISTENERS
 
-// document.addEventListener("keydown", (event) => {
-//   switch (event.key) {
-//     case "a":
-//       hitButton();
-//       break;
-//     case "s":
-//       hitButton();
-//       break;
-//     case "d":
-//       hitButton();
-//       break;
-//     case "f":
-//       hitButton();
-//       break;
-//   }
-// });
+document.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "a":
+      console.log("hello");
+      hitButton("first-btn");
+      break;
+    case "s":
+      console.log("hello");
+      hitButton("second-btn");
+      break;
+    case "d":
+      console.log("hello");
+      hitButton("third-btn");
+      break;
+    case "f":
+      console.log("hello");
+      hitButton("fourth-btn");
+      break;
+  }
+});
 
-document.querySelector(".first-btn").addEventListener("click", hitButton);
-document.querySelector(".second-btn").addEventListener("click", hitButton);
-document.querySelector(".third-btn").addEventListener("click", hitButton);
-document.querySelector(".fourth-btn").addEventListener("click", hitButton);
+// document.querySelector(".first-btn").addEventListener("click", hitButton);
+// document.querySelector(".second-btn").addEventListener("click", hitButton);
+// document.querySelector(".third-btn").addEventListener("click", hitButton);
+// document.querySelector(".fourth-btn").addEventListener("click", hitButton);
 
 // startSong();
 // MUSIC SELECTION
