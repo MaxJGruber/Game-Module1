@@ -1,13 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
 * {
-  font-family: Avenir;
+  font-family: Bangers;
 }
 
 /* SCREEN PARTS */
 
 body {
-  /* background: url("https://www.washingtonpost.com/graphics/2018/entertainment/music/orchestra-gender-pay-gap/img/bso.jpg"); */
   background: url("https://chalfontguitarlessons.com/wp-content/uploads/2019/11/lakewood-looking-down-neck-vertical-copy-e1573482651671.jpg");
-  /* background: url('https://cdn.hipwallpaper.com/i/59/23/HfZTGI.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   /* height: 411px;
@@ -141,11 +141,14 @@ h1.instructions-title {
 /* SCORE */
 
 .score {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: cornflowerblue;
   padding: 5%;
   border-radius: 15%;
   margin: 10%;
+  vertical-align: auto;
 }
 
 /* LEADERBOARD */

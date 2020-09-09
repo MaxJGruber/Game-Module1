@@ -13,6 +13,38 @@ let elem4 = document.querySelector(".fourth-btn");
 let rect4 = elem4.getBoundingClientRect();
 console.log(rect4);
 
+// MUSIC SELECTION
+
+const firstAudioTrack = new Audio("./songs/bensound-goinghigher.mp3");
+const secondAudioTrack = new Audio("./songs/bensound-happyrock.mp3");
+const thirdAudioTrack = new Audio("./songs/bensound-highoctane.mp3");
+const fourthAudioTrack = new Audio("./songs/bensound-punky.mp3");
+const fifthAudioTrack = new Audio("./songs/bensound-rumble.mp3");
+
+const playlist = [
+  firstAudioTrack,
+  secondAudioTrack,
+  thirdAudioTrack,
+  fourthAudioTrack,
+  fifthAudioTrack,
+];
+
+// START BUTTON
+//Main focus of today
+
+function startSong() {
+  let play = playlist[Math.floor(Math.random() * playlist.length)].play();
+  console.log(play);
+  setInterval(() => {
+    if (id === 10) {
+      clearInterval(id);
+      play.pause();
+    } else {
+      randomNote();
+    }
+  }, 1000);
+}
+
 // CREATING RANDOM NOTE (this random note is then assigned to its specific string)
 // STRING ORDER : GREEN / ORANGE / RED / BLUE
 
@@ -22,8 +54,9 @@ const arrayOfNotes = [
   ["third-note", "third-cord", "three"],
   ["fourth-note", "fourth-cord", "four"],
 ];
-
+let id = 0;
 function randomNote() {
+  id++;
   let note = document.createElement("div");
   note.classList.add("note");
   const classesToAdd =
@@ -40,13 +73,6 @@ function randomNote() {
   // if (chosenParent) {
   removeElement();
   // } //if statement to determine whether note exists?
-}
-
-// START BUTTON
-//Main focus of today
-
-function startSong() {
-  setInterval(randomNote, 1000);
 }
 
 // ANIMATION END (so that notes disappear and don't go back to position 0)
@@ -128,24 +154,9 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+document.getElementById("play-btn").addEventListener("click", startSong);
+
 // document.querySelector(".first-btn").addEventListener("click", hitButton);
 // document.querySelector(".second-btn").addEventListener("click", hitButton);
 // document.querySelector(".third-btn").addEventListener("click", hitButton);
 // document.querySelector(".fourth-btn").addEventListener("click", hitButton);
-
-// startSong();
-// MUSIC SELECTION
-
-const firstAudioTrack = new Audio("./songs/bensound-goinghigher.mp3");
-const secondAudioTrack = new Audio("./songs/bensound-happyrock.mp3");
-const thirdAudioTrack = new Audio("./songs/bensound-highoctane.mp3");
-const fourthAudioTrack = new Audio("./songs/bensound-punky.mp3");
-const fifthAudioTrack = new Audio("./songs/bensound-rumble.mp3");
-
-const playlist = [
-  firstAudioTrack,
-  secondAudioTrack,
-  thirdAudioTrack,
-  fourthAudioTrack,
-  fifthAudioTrack,
-];
