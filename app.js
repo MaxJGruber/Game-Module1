@@ -1,3 +1,21 @@
+// FRET-BOARD ELEMENTS COORDINATES
+
+let elem1 = document.querySelector(".first-btn");
+let rect1 = elem1.getBoundingClientRect();
+// let note = document.querySelector(".first-note");
+// let noteRect = note.getBoundingClientRect();
+// console.log(noteRect);
+console.log(rect1);
+let elem2 = document.querySelector(".second-btn");
+let rect2 = elem2.getBoundingClientRect();
+console.log(rect2);
+let elem3 = document.querySelector(".third-btn");
+let rect3 = elem3.getBoundingClientRect();
+console.log(rect3);
+let elem4 = document.querySelector(".fourth-btn");
+let rect4 = elem4.getBoundingClientRect();
+console.log(rect4);
+
 // CREATING RANDOM NOTE (this random note is then assigned to its specific string)
 // STRING ORDER : GREEN / ORANGE / RED / BLUE
 
@@ -22,7 +40,9 @@ function randomNote() {
 
   const chosenParent = document.getElementById(`${classesToAdd[2]}`);
   chosenParent.appendChild(note);
-  removeElement(); //if statement to determine whether note exists?
+  // if (chosenParent) {
+  removeElement();
+  // } //if statement to determine whether note exists?
 }
 
 // START BUTTON
@@ -43,21 +63,6 @@ function removeElement() {
   );
 }
 
-// FRET-BOARD ELEMENTS COORDINATES
-
-let elem1 = document.querySelector(".first-btn");
-let rect1 = elem1.getBoundingClientRect();
-console.log(rect1);
-let elem2 = document.querySelector(".second-btn");
-let rect2 = elem2.getBoundingClientRect();
-console.log(rect2);
-let elem3 = document.querySelector(".third-btn");
-let rect3 = elem3.getBoundingClientRect();
-console.log(rect3);
-let elem4 = document.querySelector(".fourth-btn");
-let rect4 = elem4.getBoundingClientRect();
-console.log(rect4);
-
 // SCORE SET TO ZERO
 
 let score = 0;
@@ -65,65 +70,31 @@ let score = 0;
 // CLICKHANDLER (Interaction of button click; outcome determined by timing (checking coordinates of
 // note element compared to fret-board element coordinates)
 
-// function checkingCoordinates(targetClass, targetRect) {
-//   let stringNote = document.querySelector(targetClass);
-//   if (stringNote) {
-//     let stringRect = stringNote.getBoundingClientRect();
-//     if (stringRect.x < targetRect.x + 20 && stringRect.x > targetRect.x - 20) {
-//       score += 10;
-//     }
-//   }
-// }
-
-// function hitButton() {
-//   checkingCoordinates(".first-note", rect1);
-//   checkingCoordinates(".second-note", rect2);
-//   checkingCoordinates(".third-note", rect3);
-//   checkingCoordinates(".fourth-note", rect4);
-
-//   // SCORE
-//   let scoreview = document.getElementById("score-view");
-//   scoreview.innerHTML = `${score}`;
-// }
-
-function checkingCoordinates() {
-  let firstStringNote = document.querySelector(".first-note");
-  if (firstStringNote) {
-    let firstStringRect = firstStringNote.getBoundingClientRect();
-    if (firstStringRect.x < rect1.x + 10 && firstStringRect.x > rect1.x - 10) {
-      score += 10;
-    }
-  }
-  let secondStringNote = document.querySelector(".second-note");
-  if (secondStringNote) {
-    let secondStringRect = secondStringNote.getBoundingClientRect();
+function checkingCoordinates(targetClass, targetRect) {
+  let stringNote = document.querySelector(targetClass);
+  if (stringNote) {
+    let stringRect = stringNote.getBoundingClientRect();
     if (
-      secondStringRect.x < rect2.x + 20 &&
-      secondStringRect.x > rect2.x - 20
+      stringRect.y < targetRect.y + 20 &&
+      stringRect.y > targetRect.y - 20 &&
+      stringRect.x === targetRect.x &&
+      stringRect.x === targetRect.x
     ) {
       score += 10;
-      console.log(secondStringRect);
+      console.log("NOTE Y", stringRect.y);
+      console.log("BUTTON Y", targetRect.y);
+      console.log("BUTTON Y+20", targetRect.y + 20);
+      console.log("RESULT", targetClass.y, targetRect.y);
+      console.log("RESULT", targetClass.x, targetRect.x);
     }
   }
-  let thirdStringNote = document.querySelector(".third-note");
-  if (thirdStringNote) {
-    let thirdStringRect = thirdStringNote.getBoundingClientRect();
-    if (thirdStringRect.x < rect3.x + 20 && thirdStringRect.x > rect3.x - 20) {
-      score += 10;
-      console.log(thirdStringRect);
-    }
-  }
-  let fourthStringNote = document.querySelector(".fourth-note");
-  if (fourthStringNote) {
-    let fourthStringRect = fourthStringNote.getBoundingClientRect();
-    if (
-      fourthStringRect.x < rect4.x + 20 &&
-      fourthStringRect.x > rect4.x - 20
-    ) {
-      score += 10;
-      console.log(fourthStringRect);
-    }
-  }
+}
+
+function hitButton() {
+  checkingCoordinates(".first-note", rect1);
+  checkingCoordinates(".second-note", rect2);
+  checkingCoordinates(".third-note", rect3);
+  checkingCoordinates(".fourth-note", rect4);
 
   // SCORE
   let scoreview = document.getElementById("score-view");
@@ -149,10 +120,10 @@ function checkingCoordinates() {
 //   }
 // });
 
-elem1.onclick = checkingCoordinates;
-elem2.onclick = checkingCoordinates;
-elem3.onclick = checkingCoordinates;
-elem4.onclick = checkingCoordinates;
+document.querySelector(".first-btn").addEventListener("click", hitButton);
+document.querySelector(".second-btn").addEventListener("click", hitButton);
+document.querySelector(".third-btn").addEventListener("click", hitButton);
+document.querySelector(".fourth-btn").addEventListener("click", hitButton);
 
 // startSong();
 // MUSIC SELECTION
