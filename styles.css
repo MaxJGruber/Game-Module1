@@ -8,7 +8,9 @@
 
 body {
   background-image: url(./images/ROCK10.png);
+  background-color: teal;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .background-guitar {
@@ -188,6 +190,7 @@ h1.instructions-title {
   border-radius: 15%;
   width: 100%;
   color: #eb01a5;
+  opacity: 100%;
 }
 
 #streak-title {
@@ -228,6 +231,7 @@ h1.instructions-title {
   margin: 10%;
   width: 100%;
   color: #eb01a5;
+  opacity: 100%;
 }
 
 #score-title {
