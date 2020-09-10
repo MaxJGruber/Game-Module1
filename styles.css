@@ -107,6 +107,21 @@ h1.instructions-title {
   color: green;
 }
 
+#green {
+  color: #bada55;
+}
+
+#orange {
+  color: orange;
+}
+
+#red {
+  color: red;
+}
+
+#blue {
+  color: #10aded;
+}
 /* NOTES */
 
 .note {
@@ -294,6 +309,9 @@ h1.instructions-title {
   box-shadow: 0 8px 6px -6px #505;
 }
 
+#rank {
+  color: #fb1;
+}
 .endgame-ul #next-round:hover {
   -webkit-animation: vibrate-3 0.5s linear infinite both;
   animation: vibrate-3 0.5s linear infinite both;
@@ -462,25 +480,24 @@ h1.instructions-title {
 @-webkit-keyframes slide-out-left {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
+    transform: translateX(-1000px);
     opacity: 0;
   }
 }
 @keyframes slide-out-left {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: translateX(-1000px);
-            transform: translateX(-1000px);
+    transform: translateX(-1000px);
     opacity: 0;
   }
 }
-

@@ -30,13 +30,13 @@ const playlist = [
 ];
 
 // START BUTTON
-//Main focus of today
-// let song = playlist[Math.floor(Math.random() * playlist.length)];
-// let applause = new Audio("./songs/applause.mp3");
+
+let song = playlist[Math.floor(Math.random() * playlist.length)];
+let applause = new Audio("./songs/applause.mp3");
 function startSong() {
   let endGame = document.querySelector(".endgame");
-  // song.play();
-  // console.log(song);
+  song.play();
+  console.log(song);
   score = 0;
   streak = 0;
   if (endGame.style.visibility === "visible") {
@@ -45,15 +45,15 @@ function startSong() {
     // endGame.style.visibility = "hidden";
   }
   const intervalId = setInterval(() => {
-    if (id === 5) {
+    if (id === 45) {
       clearInterval(intervalId);
       id = 0;
       endGame.style.animation =
         "slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
       endGame.style.visibility = "visible";
       whichWinnerAreYou(score);
-      // song.pause();
-      // applause.play();
+      song.pause();
+      applause.play();
     } else {
       randomNote();
     }
