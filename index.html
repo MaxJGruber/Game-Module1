@@ -10,70 +10,77 @@
     <link rel="text/html" href="./gamerules.html" />
   </head>
   <body>
-    <nav class="nav-bar">
-      <ul class="nav-bar-ul">
-        <li><a href="./gamerules.html">How To Play</a></li>
-        <li><a href="#" id="play-btn">Play</a></li>
+    <div class="background-guitar">
+      <nav class="nav-bar">
+        <ul class="nav-bar-ul">
+          <li><a href="./gamerules.html">How To Play</a></li>
+          <li><a href="#" id="play-btn">Play</a></li>
+        </ul>
+      </nav>
+      <div class="player-screen">
+        <div class="column-score">
+          <div class="score">
+            <h3 id="score-title">SCORE</h3>
+            <div id="score-display"><span id="score-view">0</span></div>
+          </div>
+        </div>
+        <div class="gameview">
+          <div class="violin-string" id="one">
+            <!-- <div id="1" class="note first-note"></div> -->
+          </div>
+          <div class="violin-string" id="two">
+            <!-- <div id="2" class="note second-note"></div> -->
+          </div>
+          <div class="violin-string" id="three">
+            <!-- <div id="3" class="note third-note"></div> -->
+          </div>
+          <div class="violin-string" id="four">
+            <!-- <div id="4" class="note fourth-note"></div> -->
+          </div>
+        </div>
+        <div class="column-streak">
+          <div class="streak">
+            <h3 id="streak-title">STREAK</h3>
+            <div id="streak-display"><span id="streak-view">0</span></div>
+            <h5 id="multiplyer-title">MULTIPLYER</h5>
+            <div id="multiplyer-display">
+              <span id="multiplyer-view">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="action-bar">
+        <div></div>
+        <div class="fret-board">
+          <div class="tap-bar">
+            <div id="interaction-zone-one">
+              <div class="tap-button first-btn"></div>
+            </div>
+          </div>
+          <div class="tap-bar">
+            <div id="interaction-zone-two">
+              <div class="tap-button second-btn"></div>
+            </div>
+          </div>
+          <div class="tap-bar">
+            <div id="interaction-zone-three">
+              <div class="tap-button third-btn"></div>
+            </div>
+          </div>
+          <div class="tap-bar">
+            <div id="interaction-zone-four">
+              <div class="tap-button fourth-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <nav class="endgame">
+      <ul class="endgame-ul">
+        <li><a id="rank"></a></li>
+        <li><a href="#" id="play-again-btn">Play Again?</a></li>
       </ul>
     </nav>
-    <div class="player-screen">
-      <div class="column-score">
-        <div class="score">
-          <h3 id="score-title">SCORE</h3>
-          <div id="score-display"><span id="score-view">0</span></div>
-        </div>
-      </div>
-      <div class="column-streak">
-        <div class="streak">
-          <h3 id="streak-title">STREAK</h3>
-          <div id="streak-display"><span id="streak-view"></span></div>
-        </div>
-      </div>
-      <div class="gameview">
-        <div class="violin-string" id="one">
-          <!-- <div id="1" class="note first-note"></div> -->
-        </div>
-        <div class="violin-string" id="two">
-          <!-- <div id="2" class="note second-note"></div> -->
-        </div>
-        <div class="violin-string" id="three">
-          <!-- <div id="3" class="note third-note"></div> -->
-        </div>
-        <div class="violin-string" id="four">
-          <!-- <div id="4" class="note fourth-note"></div> -->
-        </div>
-      </div>
-
-      <div class="leaderboard">
-        <h3 id="leaderboard-title">LEADERBOARD</h3>
-        <div id="leaderboard-display">"Shows leaderboard"</div>
-      </div>
-    </div>
-    <div class="action-bar">
-      <div></div>
-      <div class="fret-board">
-        <div class="tap-bar">
-          <div id="interaction-zone-one">
-            <div class="tap-button first-btn"></div>
-          </div>
-        </div>
-        <div class="tap-bar">
-          <div id="interaction-zone-two">
-            <div class="tap-button second-btn"></div>
-          </div>
-        </div>
-        <div class="tap-bar">
-          <div id="interaction-zone-three">
-            <div class="tap-button third-btn"></div>
-          </div>
-        </div>
-        <div class="tap-bar">
-          <div id="interaction-zone-four">
-            <div class="tap-button fourth-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div></div>
-    </div>
   </body>
 </html>

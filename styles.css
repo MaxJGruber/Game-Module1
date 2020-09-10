@@ -7,14 +7,17 @@
 /* SCREEN PARTS */
 
 body {
-  background: url("https://chalfontguitarlessons.com/wp-content/uploads/2019/11/lakewood-looking-down-neck-vertical-copy-e1573482651671.jpg");
+  background-color: black;
+}
+.background-guitar {
+  background: url(./images/ROCK5.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .player-screen {
   display: grid;
-  grid-template-columns: 15% 15% 40% 1fr;
+  grid-template-columns: 1fr 40% 1fr;
   margin-top: 30px;
 }
 
@@ -35,7 +38,7 @@ body {
   grid-template-columns: 1fr 40% 1fr;
   grid-row: auto;
   height: 40px;
-  margin-top: 20vh;
+  margin-top: 5vh;
 }
 
 .fret-board {
@@ -57,7 +60,7 @@ body {
 .nav-bar a {
   color: #f24153;
   text-decoration: none;
-  font-size: 64px;
+  font-size: 55px;
 }
 
 .nav-bar-ul {
@@ -78,14 +81,22 @@ body {
 
 /* GAME RULES */
 
+.instructions-body {
+  background: url(./images/ROCK4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .instructions-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #bee;
+  margin: 10%;
 }
 
 h1.instructions-title {
-  font-size: 65px;
+  font-size: 45px;
 }
 
 .instruction-item {
@@ -96,9 +107,6 @@ h1.instructions-title {
   color: green;
 }
 
-#lose-points {
-  color: red;
-}
 /* NOTES */
 
 .note {
@@ -152,22 +160,32 @@ h1.instructions-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/ROCK2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/ROCK2.jpg);
   background-size: cover;
   background-position: center;
   padding: 5%;
   border-radius: 15%;
-  margin: 10%;
   width: 100%;
   color: #eb01a5;
 }
 
 #streak-title {
   font-size: 2.5em;
+  margin: 5px;
 }
 
 #streak-display {
-  font-size: 3.5em;
+  font-size: 2.5em;
+}
+
+#multiplyer-title {
+  font-size: 1.5em;
+  margin: 5px;
+}
+
+#multiplyer-display {
+  font-size: 1.5em;
 }
 
 /* SCORE */
@@ -181,7 +199,8 @@ h1.instructions-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/ROCK1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/ROCK1.jpg);
   background-size: cover;
   background-position: center;
   padding: 5%;
@@ -193,6 +212,7 @@ h1.instructions-title {
 
 #score-title {
   font-size: 2.5em;
+  margin: 20px;
 }
 
 #score-display {
@@ -202,11 +222,10 @@ h1.instructions-title {
 
 .leaderboard {
   display: inline-block;
-  background-color: cornflowerblue;
   padding: 5%;
   border-radius: 15%;
   margin: 10%;
-  height: 90%;
+  height: 50%;
 }
 
 /* INTERACTION ZONE */
@@ -246,6 +265,37 @@ h1.instructions-title {
   background-color: #80808085;
   position: relative;
   z-index: 1;
+}
+
+/* ENDGAME BAR */
+
+.endgame {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/ROCK3.jpg);
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.endgame a {
+  color: #f24153;
+  text-decoration: none;
+  font-size: 55px;
+}
+
+.endgame-ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.endgame-ul li {
+  list-style-type: none;
+  text-align: center;
+  box-shadow: 0 8px 6px -6px hotpink;
+}
+
+.endgame-ul li:hover {
+  -webkit-animation: vibrate-3 0.5s linear infinite both;
+  animation: vibrate-3 0.5s linear infinite both;
 }
 
 /* ANIMATIONS */
