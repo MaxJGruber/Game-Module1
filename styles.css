@@ -271,15 +271,16 @@ h1.instructions-title {
 
 .endgame {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./images/ROCK3.jpg);
+    url(./images/ROCK6.jpg);
   padding-top: 14px;
   padding-bottom: 14px;
+  visibility: hidden;
 }
 
 .endgame a {
-  color: #f24153;
+  color: #2011e2;
   text-decoration: none;
-  font-size: 55px;
+  font-size: 37px;
 }
 
 .endgame-ul {
@@ -290,10 +291,10 @@ h1.instructions-title {
 .endgame-ul li {
   list-style-type: none;
   text-align: center;
-  box-shadow: 0 8px 6px -6px hotpink;
+  box-shadow: 0 8px 6px -6px #505;
 }
 
-.endgame-ul li:hover {
+.endgame-ul #next-round:hover {
   -webkit-animation: vibrate-3 0.5s linear infinite both;
   animation: vibrate-3 0.5s linear infinite both;
 }
@@ -432,3 +433,54 @@ h1.instructions-title {
     transform: translate(0);
   }
 }
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+

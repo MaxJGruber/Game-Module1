@@ -2,16 +2,16 @@
 
 let elem1 = document.querySelector(".first-btn");
 let rect1 = elem1.getBoundingClientRect();
-console.log(rect1);
+// console.log(rect1);
 let elem2 = document.querySelector(".second-btn");
 let rect2 = elem2.getBoundingClientRect();
-console.log(rect2);
+// console.log(rect2);
 let elem3 = document.querySelector(".third-btn");
 let rect3 = elem3.getBoundingClientRect();
-console.log(rect3);
+// console.log(rect3);
 let elem4 = document.querySelector(".fourth-btn");
 let rect4 = elem4.getBoundingClientRect();
-console.log(rect4);
+// console.log(rect4);
 
 // MUSIC SELECTION
 
@@ -34,14 +34,23 @@ const playlist = [
 // let song = playlist[Math.floor(Math.random() * playlist.length)];
 // let applause = new Audio("./songs/applause.mp3");
 function startSong() {
+  let endGame = document.querySelector(".endgame");
   // song.play();
   // console.log(song);
+  score = 0;
+  streak = 0;
+  if (endGame.style.visibility === "visible") {
+    endGame.style.animation =
+      "slide-out-left 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both";
+    // endGame.style.visibility = "hidden";
+  }
   const intervalId = setInterval(() => {
     if (id === 5) {
       clearInterval(intervalId);
       id = 0;
-      console.log("BONZOUR");
-      console.log(id);
+      endGame.style.animation =
+        "slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+      endGame.style.visibility = "visible";
       whichWinnerAreYou(score);
       // song.pause();
       // applause.play();
@@ -76,9 +85,9 @@ function randomNote() {
 
   const chosenParent = document.getElementById(`${classesToAdd[2]}`);
   chosenParent.appendChild(note);
-  // if (chosenParent) {
-  removeElement();
-  // } //if statement to determine whether note exists?
+  if (chosenParent) {
+    removeElement();
+  } //if statement to determine whether note exists?
 }
 
 // ANIMATION END (so that notes disappear and don't go back to position 0)
@@ -112,23 +121,23 @@ function checkingCoordinates(targetClass, targetRect) {
       stringRect.x === targetRect.x
     ) {
       score += 10;
+      console.log(score);
       streak += 1;
       streakview.innerHTML = `${streak}`;
-      // whichWinnerAreYou(score);
       multiplyer(streak);
-      console.log("NOTE Y", stringRect.y);
-      console.log("BUTTON Y", targetRect.y);
-      console.log("BUTTON Y+20", targetRect.y + 20);
-      console.log("RESULT", stringRect.y, targetRect.y);
-      console.log("RESULT", stringRect.x, targetRect.x);
+      // console.log("NOTE Y", stringRect.y);
+      // console.log("BUTTON Y", targetRect.y);
+      // console.log("BUTTON Y+20", targetRect.y + 20);
+      // console.log("RESULT", stringRect.y, targetRect.y);
+      // console.log("RESULT", stringRect.x, targetRect.x);
     } else {
       streak = 0;
     }
   }
+  whichWinnerAreYou(score);
 }
 
 function hitButton(evtClass) {
-  // const currentCssClass = evt.target.className.replace("tap-button ", "");
   const currentCssClass = evtClass;
   const possibleActions = {
     "first-btn": [rect1, ".first-note"],
@@ -155,11 +164,11 @@ function multiplyer(winStreak) {
       multiplyerview.innerHTML = `X2`;
       break;
     case 6:
-      score += 40;
+      score += 80;
       multiplyerview.innerHTML = `X4`;
       break;
     case 8:
-      score += 80;
+      score += 160;
       multiplyerview.innerHTML = `X8`;
       break;
     case 0:
@@ -168,45 +177,46 @@ function multiplyer(winStreak) {
   }
 }
 
-// function whichWinnerAreYou(actualScore) {
-//   let rank = document.getElementById("rank");
-//   switch (actualScore) {
-//     case actualScore > 50:
-//       rank.innerHTML = `ROADIE!`;
-//       console.log(`ROADIE!`);
-//       break;
-//     case actualScore > 1000:
-//       rank.innerHTML = `ZAYN MALIK?`;
-//       console.log(`ZAYN MALIK?`);
-//       break;
-//     case actualScore > 2000:
-//       rank.innerHTML = `SUPERSTAR!`;
-//       console.log(`SUPERSTAR!`);
-//       break;
-//     case actualScore > 3000:
-//       rank.innerHTML = `LEGEND!`;
-//       console.log(`LEGEND!`);
-//       break;
-//     case actualScore > 4000:
-//       rank.innerHTML = `ROCK GOD!`;
-//       console.log(`ROCK GOD!`);
-//       break;
-//   }
-// }
+function whichWinnerAreYou(actualScore) {
+  let rank = document.getElementById("rank");
+  if (actualScore < 50) {
+    rank.innerHTML = `LOSER!`;
+    console.log(`LOSER!`);
+  } else if (actualScore >= 50 && actualScore < 1000) {
+    rank.innerHTML = `ROADIE!`;
+    // console.log(`ROADIE!`);
+  } else if (actualScore >= 1000 && actualScore < 2500) {
+    rank.innerHTML = `ZAYN MALIK?`;
+    // console.log(`ZAYN MALIK?`);
+  } else if (actualScore >= 2500 && actualScore < 4000) {
+    rank.innerHTML = `SUPERSTAR!`;
+    // console.log(`SUPERSTAR!`);
+  } else if (actualScore >= 4000 && actualScore < 7000) {
+    rank.innerHTML = `LEGEND!`;
+    // console.log(`LEGEND!`);
+  } else if (actualScore >= 7000 && actualScore < 10000) {
+    rank.innerHTML = `ROCK GOD!`;
+    // console.log(`ROCK GOD!`);
+  }
+}
 // INTERACTIONS / EVENT LISTENERS
 
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "a":
+      console.log("wax");
       hitButton("first-btn");
       break;
     case "s":
+      console.log("on");
       hitButton("second-btn");
       break;
     case "d":
+      console.log("wax");
       hitButton("third-btn");
       break;
     case "f":
+      console.log("off");
       hitButton("fourth-btn");
       break;
   }
