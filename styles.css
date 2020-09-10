@@ -10,13 +10,12 @@ body {
   background: url("https://chalfontguitarlessons.com/wp-content/uploads/2019/11/lakewood-looking-down-neck-vertical-copy-e1573482651671.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 411px;
-  width: 844px; */
 }
 
 .player-screen {
   display: grid;
-  grid-template-columns: 1fr 40% 1fr;
+  grid-template-columns: 15% 15% 40% 1fr;
+  margin-top: 30px;
 }
 
 .gameview {
@@ -49,19 +48,19 @@ body {
 /* NAVBAR */
 
 .nav-bar {
-  background-color: rgb(25, 33, 41);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/ROCK3.jpg);
   padding-top: 14px;
   padding-bottom: 14px;
 }
 
 .nav-bar a {
-  color: white;
+  color: #f24153;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 64px;
 }
 
 .nav-bar-ul {
-  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
 }
@@ -69,6 +68,12 @@ body {
 .nav-bar-ul li {
   list-style-type: none;
   text-align: center;
+  box-shadow: 0 8px 6px -6px hotpink;
+}
+
+.nav-bar-ul li:hover {
+  -webkit-animation: vibrate-3 0.5s linear infinite both;
+  animation: vibrate-3 0.5s linear infinite both;
 }
 
 /* GAME RULES */
@@ -138,30 +143,61 @@ h1.instructions-title {
 
 /* STREAK*/
 
-/* .streak {
+.column-streak {
   display: flex;
+}
+
+.streak {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: cornflowerblue;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/ROCK2.jpg);
+  background-size: cover;
+  background-position: center;
   padding: 5%;
   border-radius: 15%;
   margin: 10%;
-  vertical-align: auto;
-} */
+  width: 100%;
+  color: #eb01a5;
+}
+
+#streak-title {
+  font-size: 2.5em;
+}
+
+#streak-display {
+  font-size: 3.5em;
+}
 
 /* SCORE */
 
+.column-score {
+  display: flex;
+}
+
 .score {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: cornflowerblue;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/ROCK1.jpg);
+  background-size: cover;
+  background-position: center;
   padding: 5%;
   border-radius: 15%;
   margin: 10%;
-  vertical-align: auto;
+  width: 100%;
+  color: #eb01a5;
 }
 
+#score-title {
+  font-size: 2.5em;
+}
+
+#score-display {
+  font-size: 3.5em;
+}
 /* LEADERBOARD */
 
 .leaderboard {
@@ -170,6 +206,7 @@ h1.instructions-title {
   padding: 5%;
   border-radius: 15%;
   margin: 10%;
+  height: 90%;
 }
 
 /* INTERACTION ZONE */
@@ -250,5 +287,98 @@ h1.instructions-title {
   }
   100% {
     transform: translateY(calc(45vw - 50px));
+  }
+}
+
+@-webkit-keyframes vibrate-3 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  30% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  50% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  70% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  90% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-3 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  30% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  50% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  70% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  90% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
 }
