@@ -7,12 +7,17 @@
 /* SCREEN PARTS */
 
 body {
-  background-color: black;
+  background-image: url(./images/ROCK10.png);
+  background-repeat: no-repeat;
 }
+
 .background-guitar {
   background: url(./images/ROCK5.png);
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 90%;
+  position: relative;
+  z-index: 1;
 }
 
 .player-screen {
@@ -52,7 +57,7 @@ body {
 
 .nav-bar {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./images/ROCK3.jpg);
+    url(./images/ROCK4.jpg);
   padding-top: 14px;
   padding-bottom: 14px;
 }
