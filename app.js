@@ -33,6 +33,7 @@ const playlist = [
 
 let song = playlist[Math.floor(Math.random() * playlist.length)];
 let applause = new Audio("./songs/applause.mp3");
+
 function startSong() {
   let endGame = document.querySelector(".endgame");
   song.play();
@@ -120,8 +121,6 @@ function checkingCoordinates(targetClass, targetRect) {
       stringRect.x === targetRect.x &&
       stringRect.x === targetRect.x
     ) {
-      score += 10;
-      console.log(score);
       streak += 1;
       streakview.innerHTML = `${streak}`;
       multiplyer(streak);
@@ -156,24 +155,20 @@ function hitButton(evtClass) {
 }
 
 function multiplyer(winStreak) {
+  console.log("hello");
   let multiplyerview = document.getElementById("multiplyer-view");
-
-  switch (winStreak) {
-    case 4:
-      score += 20;
-      multiplyerview.innerHTML = `X2`;
-      break;
-    case 6:
-      score += 80;
-      multiplyerview.innerHTML = `X4`;
-      break;
-    case 8:
-      score += 160;
-      multiplyerview.innerHTML = `X8`;
-      break;
-    case 0:
-      score += 10;
-      multiplyerview.innerHTML = `0`;
+  if (winStreak >= 0 && winStreak < 4) {
+    score += 10;
+    multiplyerview.innerHTML = `0`;
+  } else if (winStreak >= 4 && winStreak < 8) {
+    score += 20;
+    multiplyerview.innerHTML = `X2`;
+  } else if (winStreak >= 8 && winStreak < 12) {
+    score += 80;
+    multiplyerview.innerHTML = `X4`;
+  } else if (winStreak >= 12 && winStreak < 100) {
+    score += 160;
+    multiplyerview.innerHTML = `X8`;
   }
 }
 
@@ -181,7 +176,7 @@ function whichWinnerAreYou(actualScore) {
   let rank = document.getElementById("rank");
   if (actualScore < 50) {
     rank.innerHTML = `LOSER!`;
-    console.log(`LOSER!`);
+    // console.log(`LOSER!`);
   } else if (actualScore >= 50 && actualScore < 1000) {
     rank.innerHTML = `ROADIE!`;
     // console.log(`ROADIE!`);
